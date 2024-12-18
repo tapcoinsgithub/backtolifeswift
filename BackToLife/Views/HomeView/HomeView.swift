@@ -92,8 +92,8 @@ struct HomeView: View {
                             RoundedRectangle(cornerRadius: UIScreen.main.bounds.width * 0.05)
                                 .stroke(Color.white, lineWidth: UIScreen.main.bounds.width * 0.01)
                         )
-                        AdBannerView(adUnitID: "ca-app-pub-3940256099942544/2435281174")
-                            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.06, alignment: .center)
+//                        AdBannerView(adUnitID: "ca-app-pub-3940256099942544/2435281174")
+//                            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.06, alignment: .center)
                         VStack(alignment: .leading,spacing: 0){
                             if viewModel.currentlyBlocking == false{
                                 Slider(value: $viewModel.sliderVal, in: 0...viewModel.max_time, step: 30,label: {Text("Title")}, minimumValueLabel: {Text("0")}, maximumValueLabel: {Text(viewModel.adjustTime(value: viewModel.max_time))})
@@ -216,11 +216,6 @@ struct HomeView: View {
                         .fill(Color(#colorLiteral(red: 0.9940627217, green: 0.2769024074, blue: 0, alpha: 1)))
                 )
             }
-//            AdBannerView(adUnitID: "ca-app-pub-4507110298752888/6494145835")
-//                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.06, alignment: .center)
-//                .offset(y:UIScreen.main.bounds.height * 0.461)
-//            Rectangle()
-                
         } // ZStack
         .onReceive(timer, perform: { _ in
             if viewModel.currentlyBlocking{
